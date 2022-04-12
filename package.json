@@ -15,10 +15,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "zip": "node tools/zip.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cxw42/TabFern.git"
-  },
   "keywords": [
     "chrome-extension",
     "tab-management",
@@ -40,11 +36,12 @@
     "asynquence-contrib": "^0.28.2",
     "blake2s-js": "^1.3.0",
     "buffer": "^5.7.1",
-    "font-awesome": "github:FortAwesome/font-awesome#fa-4",
+    "font-awesome": "github:fortawesome/Font-Awesome#3cef6cb7eab868fe5ec0d7058feda097749514f6",
     "install": "^0.12.2",
     "jquery": "^3.6.0",
     "keypress.js": "^2.1.5",
     "loglevel": "^1.8.0",
+    "node-sass": "^7.0.1",
     "path-browserify": "^1.0.1",
     "process": "*",
     "requirejs": "^2.3.5",
@@ -70,7 +67,7 @@
     "path-parse": "^1.0.7",
     "replacer-brunch": "^1.1.1",
     "replacestream": "^4.0.3",
-    "sass-brunch": "^2.10.8",
+    "sass-brunch": "^3.0.1",
     "seedrandom": "^2.4.3",
     "set-value": "^2.0.1",
     "tar": "^2.2.2",

@@ -393,7 +393,7 @@ function makeSaveData(data)
 /// @param cbk {function}
 ///     If provided, will be called after saving completes.
 ///     Called as cbk(err, save_data).  On success, err is null.
-function saveTree(save_ephemeral_windows = true, cbk = undefined)
+function saveTree(save_ephemeral_windows = false, cbk = undefined)
 {
     if(log.getLevel <= log.levels.TRACE) console.log('saveTree');
 
@@ -2598,7 +2598,7 @@ var tabOnCreated = (function(){     // search key: function tabOnCreated()
             // Make sure all the other indices are up to date
             M.updateTabIndexValues(win_node_id);
 
-            saveTree(true, cbk);
+            saveTree(false, cbk);
 
         } else {        // Not a duplicate
             // Figure out where it's going to go.  This is for the benefit
@@ -2625,7 +2625,7 @@ var tabOnCreated = (function(){     // search key: function tabOnCreated()
             seq.try(make_merge_check_step(ctab, win_val));
                 // .try => always run the following saveTree
 
-            seq.then((done)=>{saveTree(true, done);});
+            seq.then((done)=>{saveTree(false, done);});
         }
 
     }; //tab_on_created_inner()
@@ -3077,7 +3077,7 @@ function hamBackup()
 
     // Save the tree, including currently-open windows/tabs, then
     // export the save data to #filename.
-    saveTree(true, function(_unused_err, saved_info){
+    saveTree(false, function(_unused_err, saved_info){
         Modules.exporter(document, JSON.stringify(saved_info), filename);
     });
 } //hamBackup()
